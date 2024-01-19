@@ -5,12 +5,28 @@
   </head>
   <body>
     <h2>Program Entry Array</h2>
-    <form action="/script/method.js" method="POST">
-      Masukkan array ke-1 : <input type="text" name="satu"><br>
-      Masukkan array ke-2 : <input type="text" name="dua"><br>
-      Masukkan array ke-3 : <input type="text" name="tiga"><br>
-      <input type="submit" value="Submit"></input>
+    <form action="javascript:void(0);" method="POST" onsubmit="submitForm()">
+      Masukkan array ke-1 : <input type="text" name="satu"><br><br>
+      Masukkan array ke-2 : <input type="text" name="dua"><br><br>
+      Masukkan array ke-3 : <input type="text" name="tiga"><br><br>
+      <input type="submit" value="Submit">
     </form>
+    <script>
+      function submitForm() {
+        var satu = document.querySelector('input[name="satu"]').value;
+        var dua = document.querySelector('input[name="dua"]').value;
+        var tiga = document.querySelector('input[name="tiga"]').value;
+
+        var hasilArray = [satu, dua, tiga];
+        var pesan = `Isi input:
+          Array ke-1: ${satu}
+          Array ke-2: ${dua}
+          Array ke-3: ${tiga}
+          
+          Result: 
+          ${JSON.stringify(hasilArray)}`;
+        alert(pesan);
+      }
+    </script>
   </body>
-  <script src="/script/method.js"></script>
 </html>
